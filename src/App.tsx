@@ -1,50 +1,126 @@
 import React from "react";
 
-import { Counter } from "./components/Counter";
+import { SideBar } from "./components/SideBar/SideBar";
+import { Tile } from "./components/Tile/Tile";
+import { TilesWrapper } from "./components/TilesWrapper/TilesWrapper";
+import { Wrapper } from "./components/Wrapper/Wrapper";
+import { ITile } from "./data/ITile";
+import { tiles } from "./data/tiles";
 
+interface IState {
 
-const groceries: object[] = [
-  {
-    id: 1,
-    name: "Milk",
-    purchased: true
-  },
-  {
-    id: 2,
-    name: "Eggs",
-    purchased: true
-  },
-  {
-    id: 3,
-    name: "Cheese",
-    purchased: false
-  },
-  {
-    id: 4,
-    name: "Cake Mix",
-    purchased: false
-  },
-  {
-    id: 5,
-    name: "Carrots",
-    purchased: false
-  },
-  {
-    id: 6,
-    name: "Juice",
-    purchased: true
-  }
-];
+    score: number;
+    topScore: number;
+    tiles: ITile[];
+    clicked: number[];
+    hasWon: boolean;
+    hasLost: boolean;
+}
 
+export class App extends React.Component {
 
-export function App(): JSX.Element {
+    public readonly state: IState = {
 
-  return (
+        score: 0,
+        topScore: 0,
+        tiles: this.shuffleTiles(tiles),
+        clicked: [],
+        hasWon: false,
+        hasLost: false
+    };
 
-    <Counter initialCount={0} name={"Jeremy"} groc={groceries}>
+    public readonly clickTile = (id: number): void => {
 
-        <strong>Jeremy</strong>
+        if (this.state.hasWon) {
 
-    </Counter>
-  );
+            const newState: IState = {
+
+                score: 0,
+                topScore: this.state.topScore,
+                tiles,
+                clicked: [],
+                hasWon: false,
+                hasLost: false
+            };
+
+            this.setState(newState);
+        }
+        else {
+
+            if (!this.state.clicked.includes(id)) {
+
+                let topScore: number = this.state.topScore;
+    
+                if (this.state.score === topScore) {
+    
+                    topScore++;
+                }
+    
+                this.state.clicked.push(id);
+    
+                const newState: IState = {
+    
+                    score: this.state.score + 1,
+                    topScore,
+                    tiles: this.shuffleTiles(tiles),
+                    clicked: this.state.clicked,
+                    hasWon: this.state.clicked.length === tiles.length,
+                    hasLost: false
+                };
+    
+                this.setState(newState);
+            }
+            else {
+    
+                const newState: IState = {
+    
+                    score: 0,
+                    topScore: this.state.topScore,
+                    tiles: this.shuffleTiles(tiles),
+                    clicked: [],
+                    hasWon: false,
+                    hasLost: true
+                };
+    
+                this.setState(newState);
+            }
+        }
+    }
+
+    public readonly render = (): JSX.Element => {
+
+        return (
+            <Wrapper>
+                <SideBar
+                    score={this.state.score}
+                    topScore={this.state.topScore}
+                    hasWon={this.state.hasWon}
+                    hasLost={this.state.hasLost}
+                />
+                <TilesWrapper>
+                    {this.state.tiles.map((tile: ITile) => (
+                        <Tile
+                            id={tile.id}
+                            src={tile.src}
+                            alt={tile.alt}
+                            clickTile={this.clickTile}
+                            key={tile.id}
+                        />
+                    ))}
+                </TilesWrapper>
+            </Wrapper>
+        );
+    }
+
+    private shuffleTiles(tilesArray: ITile[]): ITile[] {
+
+        for (let i: number = tilesArray.length - 1; i > 0; i--) {
+
+            const j: number = Math.floor(Math.random() * (i + 1));
+
+            [tilesArray[i], tilesArray[j]] = [tilesArray[j], tilesArray[i]];
+        }
+
+        return tilesArray;
+    }
 }
