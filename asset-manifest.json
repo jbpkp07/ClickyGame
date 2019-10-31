@@ -1,22 +1,24 @@
 {
   "files": {
-    "main.css": "/ClickyGame/static/css/main.384e5fc5.chunk.css",
-    "main.js": "/ClickyGame/static/js/main.6bc1bc97.chunk.js",
-    "main.js.map": "/ClickyGame/static/js/main.6bc1bc97.chunk.js.map",
+    "main.css": "/ClickyGame/static/css/main.8e237eee.chunk.css",
+    "main.js": "/ClickyGame/static/js/main.48bae1b3.chunk.js",
+    "main.js.map": "/ClickyGame/static/js/main.48bae1b3.chunk.js.map",
     "runtime-main.js": "/ClickyGame/static/js/runtime-main.eda1b526.js",
     "runtime-main.js.map": "/ClickyGame/static/js/runtime-main.eda1b526.js.map",
     "static/js/2.ed3defaf.chunk.js": "/ClickyGame/static/js/2.ed3defaf.chunk.js",
     "static/js/2.ed3defaf.chunk.js.map": "/ClickyGame/static/js/2.ed3defaf.chunk.js.map",
     "index.html": "/ClickyGame/index.html",
-    "precache-manifest.026496ad60332214a21cb99bd4198f8a.js": "/ClickyGame/precache-manifest.026496ad60332214a21cb99bd4198f8a.js",
+    "precache-manifest.7ca9240bf8a33256f6a9e6e80b9c5a9b.js": "/ClickyGame/precache-manifest.7ca9240bf8a33256f6a9e6e80b9c5a9b.js",
     "service-worker.js": "/ClickyGame/service-worker.js",
-    "static/css/main.384e5fc5.chunk.css.map": "/ClickyGame/static/css/main.384e5fc5.chunk.css.map",
-    "static/media/index.css": "/ClickyGame/static/media/Roboto-Regular.5673da52.ttf"
+    "static/css/main.8e237eee.chunk.css.map": "/ClickyGame/static/css/main.8e237eee.chunk.css.map",
+    "static/media/index.css": "/ClickyGame/static/media/Roboto-Regular.5673da52.ttf",
+    "static/media/davis.jpg": "/ClickyGame/static/media/davis.107e6194.jpg",
+    "static/media/lebron.jpg": "/ClickyGame/static/media/lebron.822952ad.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.eda1b526.js",
     "static/js/2.ed3defaf.chunk.js",
-    "static/css/main.384e5fc5.chunk.css",
-    "static/js/main.6bc1bc97.chunk.js"
+    "static/css/main.8e237eee.chunk.css",
+    "static/js/main.48bae1b3.chunk.js"
   ]
 }
