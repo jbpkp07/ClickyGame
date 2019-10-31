@@ -4,61 +4,61 @@ export const tiles: ITile[] = [
     {
         id: 1,
         alt: "Anthony Davis",
-        src: "/img/davis.jpg"
+        src: "/ClickyGame/img/davis.jpg"
     },
     {
         id: 2,
         alt: "Stephen Curry",
-        src: "/img/curry.jpg"
+        src: "/ClickyGame/img/curry.jpg"
     },
     {
         id: 3,
         alt: "Giannis Antetokounmpo",
-        src: "/img/giannis.jpg"
+        src: "/ClickyGame/img/giannis.jpg"
     },
     {
         id: 4,
         alt: "James Harden",
-        src: "/img/harden.jpg"
+        src: "/ClickyGame/img/harden.jpg"
     },
     {
         id: 5,
         alt: "Kawhi Leonard",
-        src: "/img/kawhi.jpg"
+        src: "/ClickyGame/img/kawhi.jpg"
     },
     {
         id: 6,
         alt: "Kevin Durant",
-        src: "/img/kd.jpg"
+        src: "/ClickyGame/img/kd.jpg"
     },
     {
         id: 7,
         alt: "Kobe Bryant",
-        src: "/img/kobe.jpg"
+        src: "/ClickyGame/img/kobe.jpg"
     },
     {
         id: 8,
         alt: "Lebron James",
-        src: "/img/lebron.jpg"
+        src: "/ClickyGame/img/lebron.jpg"
     },
     {
         id: 9,
         alt: "Paul George",
-        src: "/img/pg.jpg"
+        src: "/ClickyGame/img/pg.jpg"
     },
     {
         id: 10,
         alt: "Russel Westbrook",
-        src: "/img/westbrook.jpg"
+        src: "/ClickyGame/img/westbrook.jpg"
     },
     {
         id: 11,
         alt: "Michael Jordan",
-        src: "/img/jordan.jpg"
+        src: "/ClickyGame/img/jordan.jpg"
     },
     {
         id: 12,
         alt: "Magic Johnson",
-        src: "/img/magic.jpg"
+        src: "/ClickyGame/img/magic.jpg"
     }
 ];
