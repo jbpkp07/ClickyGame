@@ -24,7 +24,7 @@ export function Scores(props: IProps): JSX.Element {
                 <span className="score">{props.topScore}</span>
             </div>
             {props.hasWon && <div className="resultWin">You Won!</div>}
-            {props.hasLost && <div className="resultLoss">You Lost</div>}
+            {props.hasLost && <div className="resultLoss">You Lose</div>}
         </div>
     );
 }

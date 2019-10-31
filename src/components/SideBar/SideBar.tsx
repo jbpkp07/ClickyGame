@@ -4,7 +4,6 @@ import { Scores } from "../Scores/Scores";
 
 import "./SideBar.css";
 
-
 interface IProps {
 
     score: number;

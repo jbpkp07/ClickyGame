@@ -31,22 +31,29 @@ export class App extends React.Component {
 
     public readonly clickTile = (id: number): void => {
 
-        if (this.state.hasWon) {
+        new Promise((resolve: Function): void => {
+            
+            if (this.state.hasWon) {
 
-            const newState: IState = {
-
-                score: 0,
-                topScore: this.state.topScore,
-                tiles,
-                clicked: [],
-                hasWon: false,
-                hasLost: false
-            };
-
-            this.setState(newState);
-        }
-        else {
-
+                const newState: IState = {
+    
+                    score: 0,
+                    topScore: this.state.topScore,
+                    tiles,
+                    clicked: [],
+                    hasWon: false,
+                    hasLost: false
+                };
+    
+                this.setState(newState, resolve());  // reset game after win before continuing
+            }
+            else {
+    
+               resolve();  // not a win, just continue
+            }
+        })
+        .then(() => {
+           
             if (!this.state.clicked.includes(id)) {
 
                 let topScore: number = this.state.topScore;
@@ -84,12 +91,20 @@ export class App extends React.Component {
     
                 this.setState(newState);
             }
-        }
+        });
     }
 
     public readonly render = (): JSX.Element => {
 
+        let gameOver: boolean = false;
+
+        if (this.state.hasWon || this.state.hasLost) {
+
+            gameOver = true;
+        }
+
         return (
+            
             <Wrapper>
                 <SideBar
                     score={this.state.score}
@@ -101,8 +116,9 @@ export class App extends React.Component {
                     {this.state.tiles.map((tile: ITile) => (
                         <Tile
                             id={tile.id}
-                            src={tile.src}
                             alt={tile.alt}
+                            src={tile.src}
+                            gameOver={gameOver}
                             clickTile={this.clickTile}
                             key={tile.id}
                         />

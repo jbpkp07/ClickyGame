@@ -25,19 +25,23 @@
 }
 
 .resultWin {
-    animation: blinkingGreen 1.0s infinite;
+    animation: blinkingGreen 1.5s infinite;
+    -webkit-animation: blinkingGreen 1.5s infinite;
     border: 3px solid var(--light-green);
     box-shadow: 0px 0px 20px var(--light-green);
     color: var(--light-green);
-    padding: 30px 8px 30px 8px;
+    font-size: 24pt;
+    padding: 20px 8px 20px 8px;
 }
 
 .resultLoss {
-    animation: blinkingRed 1.0s infinite;
+    animation: blinkingRed 1.5s infinite;
+    -webkit-animation: blinkingRed 1.5s infinite;
     border: 3px solid var(--light-red);
     box-shadow: 0px 0px 20px var(--light-red);
     color: var(--light-red);
-    padding: 30px 8px 30px 8px;
+    font-size: 24pt;
+    padding: 20px 8px 20px 8px;
 }
 
 @keyframes blinkingGreen {
