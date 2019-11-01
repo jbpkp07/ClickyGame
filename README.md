@@ -27,12 +27,7 @@ To run the web application, browse to http://localhost:3000 for the locally host
 I am the sole developer of this application.
 
 
-### Screenshots:
+### Screenshot:
 
-#### Saved articles (previously scraped):
+![1](https://github.com/jbpkp07/ClickyGame/blob/master/screenshot/clickyGame.png)
 
-![1](https://github.com/jbpkp07/DiscGolfNews/blob/master/public/assets/images/savedArticles.png)
-
-#### Add or delete notes associated with an article:
-
-![2](https://github.com/jbpkp07/DiscGolfNews/blob/master/public/assets/images/notes.png)
